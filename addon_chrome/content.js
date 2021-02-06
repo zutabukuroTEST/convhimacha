@@ -36,7 +36,7 @@ function hide() {
     const list = Array.prototype.slice.call(collection);
     list.forEach(element => {
        const elemID = element.getAttribute('onclick').replace(/[^0-9]/g, "");
-       targets.forEach(targetID => {
+       targetsID.forEach(targetID => {
            if(elemID == targetID) {
                element.remove();
            }
