@@ -8,7 +8,8 @@ const targetsID= [
 */
 //対象ID(募集欄から消したいユーザーID 42200はしゅんです)
 const targetsID = [
-    42200
+    42200,
+    1
 ];
 
 //監視設定
