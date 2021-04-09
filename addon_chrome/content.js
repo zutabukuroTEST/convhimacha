@@ -7,6 +7,7 @@ const targetsID= [
 のように募集欄から消したいユーザーIDを追加してください。
 */
 //対象ID(募集欄から消したいユーザーID 42200はしゅんです)
+//test
 const targetsID = [
     42200,
     1
