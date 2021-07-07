@@ -6,7 +6,7 @@
     "content_scripts": [{
         "matches": ["https://himachat.jp/"],
         "js": [
-            "content.js"
+            "jquery-1.12.4.min.js", "content.js"
         ]
     }]
 }
