@@ -17,24 +17,21 @@ const targetsID = [
 const CONFIG = {
     childList: true,
     attribute: true,
-    subtree: true
+    subtree: false
 };
-
-$(window).load(function() {
-    console.log(window.myid);
-})
 
 //監視開始
 const layer_observer = new MutationObserver(stream);
 layer_observer.observe(document.getElementById('co_layerroot'), CONFIG);
 
-
 //募集欄監視
 function stream() {
+    //hide
     if(document.getElementsByClassName('layer layer_yobikomi')[0] != null) {
         const list_observer = new MutationObserver(hide);
         list_observer.observe(document.getElementsByClassName('layer layer_yobikomi')[0], CONFIG);
     }
+    //dispData
     if(document.getElementsByClassName('sourcespace')[0] != null) {
         const boshu_observer = new MutationObserver(dispData);
         boshu_observer.observe(document.getElementsByClassName('sourcespace')[0], CONFIG);
@@ -59,8 +56,11 @@ function hide() {
 function dispData() {
     //表示用span作成
     $(function() {
-            $('.yobikomi_form').append('<span></span>')
+        if ($('.yobikomi_form').find('span').hasClass('disp') == false) {
+            $('.yobikomi_form').append('<span></span>', '<span></span>');
+            $('.yobikomi_form').find('span').addClass('disp');
             $('.yobikomi_form').find('span').css({'background-color':'white'});
+        }
     })
     //表示
     $('.yobikomiul').each(function(){
